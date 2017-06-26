@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Bubbler+One" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="flex-container">
+    <div class="top-box">
+    </div>
+    <div class="mid-box">
+        <div class="main-block">
+            <div class="top-field">
+                <button style="width: 15%" class="ghost-button" id="reset">Reset</button>
+            </div>
+            <div class="mid-field">
+                <span id="minPlus" style="height: 100%" class="glyphicon-plus sign"></span>
+                <div class="field">
+                    <p class="mins" id="mins">25</p>
+                    <p class="dots" id="dots">:</p>
+                    <p class="sec" id="sec">00</p>
+                </div>
+                <span id="minMinus" style="height: 100%" class="glyphicon-minus sign"></span>
+            </div>
+            <div class="bot-field">
+                <button id="start" style="margin-right: 15px; width: 15%; color: green" class="ghost-button">Start</button>
+                <button id="stop" style="margin-left: 15px; width: 15%; color: red" class="ghost-button">Pause</button>
+            </div>
+        </div>
+    </div>
+    <div class="bot-box">
+    </div>
+</div>
+
+<script>
+    let minutes = 25;
+    let seconds = 0;
+    let timer = null;
+    let startBtn = document.getElementById("start");
+    let stopBtn = document.getElementById("stop");
+    let minPlus = document.getElementById("minPlus");
+    let minMinus = document.getElementById("minMinus");
+    let reset = document.getElementById("reset");
+    let mins = document.getElementById("mins");
+    let dots = document.getElementById("dots");
+    let sec = document.getElementById("sec");
+
+    startBtn.onclick = function() {
+        if(!timer){
+            startInterval();
+        }
+    };
+    stopBtn.onclick = function() {
+        clearInterval(timer);
+        timer = null;
+    };
+    minPlus.onclick = function() {
+        if (!timer){
+            minutes++;
+            seconds = 0;
+            makeChanges();
+        }
+    };
+    minMinus.onclick = function() {
+        if (!timer && minutes !== 0){
+            minutes--;
+            seconds = 0;
+            makeChanges();
+        }
+    };
+    reset.onclick = function() {
+        if (!timer ){
+            minutes = 25;
+            seconds = 0;
+            makeChanges();
+        }
+    };
+
+    function startInterval() {
+        timer = setInterval(function() {
+            if (seconds === 0 && minutes > 0){
+                minutes -= 1;
+                seconds = 60;
+            }
+            if (minutes > 0 || seconds > 0){
+                seconds--;
+                makeChanges();
+            }
+            else {
+                //break message
+            }
+
+        }, 1000);
+    }
+    function makeChanges() {
+        if (seconds < 10){
+            mins.innerHTML = minutes;
+            dots.innerHTML = ':';
+            sec.innerHTML = '0' + seconds;
+        }
+        else{
+            mins.innerHTML = minutes;
+            dots.innerHTML = ':';
+            sec.innerHTML = seconds;
+        }
+    }
+
+</script>
+</body>
+</html>
