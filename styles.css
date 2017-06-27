@@ -6,34 +6,34 @@
 }
 body {
     background-color: var(--background-color);
-    height: 100vh;
 }
 
 .flex-container{
     display: flex;
     flex-direction: column;
-    height:100vh;
 }
 
 .top-box{
     display: flex;
-    flex: 1;
+    height: 245.5px;
     justify-content: center;
     align-items: center;
 }
 .mid-box{
     display: flex;
-    flex: 2;
+    height: 491px;
     justify-content: center;
     align-items: stretch;
 }
 .bot-box{
     display: flex;
-    flex: 2;
+    height: 245.5px;
+    justify-content: center;
+    align-items: flex-start;
 }
 .field {
     display: flex;
-    font-size: 75px;
+    font-size: 85px;
     font-family: 'Bubbler One', sans-serif;
     font-weight: 500;
     color: var(--font-color);
@@ -49,25 +49,81 @@ body {
 .main-block{
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 525.2px;
     background-color: var(--window-color);
     border-radius: 4%;
+    height: 75%;
     }
 .top-field{
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 3.5;
+    height: 100%;
+}
+.break-window{
+    flex: 1.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    height: 100%;
+    font-family: 'Bubbler One', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+}
+.session-window{
+    flex: 1.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    height: 100%;
+    font-family: 'Bubbler One', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+}
+.break-title{
+    font-family: 'Coda', cursive;
+    font-weight: 100;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: flex-end;
-    flex: 2.3;
-    height: 100%;
-    margin-bottom: 30px;
+}
+.break-time{
+    font-size: 23px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.session-time{
+    font-size: 23px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.session-minutes{
+    justify-content: center;
+    width: 60px;
+    display: flex;
+    flex-direction: row;
+}
+.status{
+    flex: 2;
+}
+.dummy2{
+    flex: 1.8;
 }
 .mid-field{
     flex: 1;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding-left: 17% ;
-    padding-right: 17% ;
+    justify-content: center;
 }
 .sign{
     font-size: 60px;
@@ -76,7 +132,7 @@ body {
     cursor: pointer;
 }
 .bot-field{
-    margin-top: 30px;
+    margin-top: 15px;
     flex: 3;
     display: flex;
     justify-content: center;
@@ -101,7 +157,32 @@ body {
     margin-right: 12px;
     display: inline-block;
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Coda', cursive;
     min-width: 120px;
+}
+.title{
+    font-family: 'Coda', cursive;
+    font-size: 45px;
+    color: whitesmoke;
+}
+.trademark{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 17px;
+    color: whitesmoke;
+}
+.name{
+color: var(--window-color);
+}
+.status{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Coda', cursive;
+    font-size: 35px;
+}
+.symbols{
+    height: 80%;
 }
 
